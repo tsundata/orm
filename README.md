@@ -1,2 +1,2 @@
-# orm
+# ORM
 Go ORM
