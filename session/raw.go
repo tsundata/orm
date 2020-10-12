@@ -12,6 +12,7 @@ import (
 type Session struct {
 	db       *sql.DB
 	dialect  dialect.Dialect
+	tx       *sql.Tx
 	refTable *schema.Schema
 	clause   clause.Clause
 	sql      strings.Builder
@@ -26,10 +27,6 @@ func (s *Session) Clear() {
 	s.sql.Reset()
 	s.sqlVars = nil
 	s.clause = clause.Clause{}
-}
-
-func (s *Session) DB() *sql.DB {
-	return s.db
 }
 
 func (s *Session) Raw(sql string, values ...interface{}) *Session {
@@ -61,4 +58,20 @@ func (s *Session) QueryRows() (rows *sql.Rows, err error) {
 		log.Error(err)
 	}
 	return
+}
+
+type CommonDB interface {
+	Query(query string, args ...interface{}) (*sql.Rows, error)
+	QueryRow(query string, args ...interface{}) *sql.Row
+	Exec(query string, args ...interface{}) (sql.Result, error)
+}
+
+var _ CommonDB = (*sql.DB)(nil)
+var _ CommonDB = (*sql.Tx)(nil)
+
+func (s *Session) DB() CommonDB {
+	if s.tx != nil {
+		return s.tx
+	}
+	return s.db
 }
