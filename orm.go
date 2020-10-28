@@ -3,10 +3,11 @@ package orm
 import (
 	"database/sql"
 	"fmt"
-	"github.com/sysatom/orm/dialect"
-	"github.com/sysatom/orm/log"
-	"github.com/sysatom/orm/session"
 	"strings"
+
+	"github.com/tsundata/orm/dialect"
+	"github.com/tsundata/orm/log"
+	"github.com/tsundata/orm/session"
 )
 
 type Engine struct {

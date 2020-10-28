@@ -2,10 +2,11 @@ package session
 
 import (
 	"database/sql"
-	_ "github.com/mattn/go-sqlite3"
-	"github.com/sysatom/orm/dialect"
 	"os"
 	"testing"
+
+	_ "github.com/mattn/go-sqlite3"
+	"github.com/tsundata/orm/dialect"
 )
 
 var (

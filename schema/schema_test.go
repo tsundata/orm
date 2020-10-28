@@ -1,8 +1,9 @@
 package schema
 
 import (
-	"github.com/sysatom/orm/dialect"
 	"testing"
+
+	"github.com/tsundata/orm/dialect"
 )
 
 type User struct {

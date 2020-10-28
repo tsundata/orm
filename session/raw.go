@@ -2,11 +2,12 @@ package session
 
 import (
 	"database/sql"
-	"github.com/sysatom/orm/clause"
-	"github.com/sysatom/orm/dialect"
-	"github.com/sysatom/orm/log"
-	"github.com/sysatom/orm/schema"
 	"strings"
+
+	"github.com/tsundata/orm/clause"
+	"github.com/tsundata/orm/dialect"
+	"github.com/tsundata/orm/log"
+	"github.com/tsundata/orm/schema"
 )
 
 type Session struct {

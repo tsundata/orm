@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
+
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/sysatom/orm"
+	"github.com/tsundata/orm"
 )
 
 func main() {

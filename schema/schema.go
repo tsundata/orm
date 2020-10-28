@@ -1,9 +1,10 @@
 package schema
 
 import (
-	"github.com/sysatom/orm/dialect"
 	"go/ast"
 	"reflect"
+
+	"github.com/tsundata/orm/dialect"
 )
 
 type Field struct {

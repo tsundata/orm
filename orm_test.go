@@ -2,10 +2,11 @@ package orm
 
 import (
 	"errors"
-	_ "github.com/mattn/go-sqlite3"
-	"github.com/sysatom/orm/session"
 	"reflect"
 	"testing"
+
+	_ "github.com/mattn/go-sqlite3"
+	"github.com/tsundata/orm/session"
 )
 
 func OpenDB(t *testing.T) *Engine {
