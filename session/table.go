@@ -2,10 +2,11 @@ package session
 
 import (
 	"fmt"
-	"github.com/sysatom/orm/log"
-	"github.com/sysatom/orm/schema"
 	"reflect"
 	"strings"
+
+	"github.com/tsundata/orm/log"
+	"github.com/tsundata/orm/schema"
 )
 
 func (s *Session) Model(value interface{}) *Session {

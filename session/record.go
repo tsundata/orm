@@ -2,8 +2,9 @@ package session
 
 import (
 	"errors"
-	"github.com/sysatom/orm/clause"
 	"reflect"
+
+	"github.com/tsundata/orm/clause"
 )
 
 func (s *Session) Insert(values ...interface{}) (int64, error) {

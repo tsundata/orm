@@ -1,6 +1,6 @@
 package session
 
-import "github.com/sysatom/orm/log"
+import "github.com/tsundata/orm/log"
 
 func (s *Session) Begin() (err error) {
 	log.Info("transaction begin")
